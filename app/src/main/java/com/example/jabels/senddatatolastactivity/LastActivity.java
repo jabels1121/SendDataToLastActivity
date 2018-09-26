@@ -3,9 +3,11 @@ package com.example.jabels.senddatatolastactivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LastActivity extends Activity {
 
@@ -37,5 +39,11 @@ public class LastActivity extends Activity {
     public void backToMainActivity(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
+    }
+
+    public void onShow(View v) {
+        Toast toast = Toast.makeText(getApplicationContext(), "Hello!", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 }
