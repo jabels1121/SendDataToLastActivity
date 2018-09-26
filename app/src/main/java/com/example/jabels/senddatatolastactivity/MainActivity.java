@@ -24,12 +24,6 @@ public class MainActivity extends Activity {
         passwordInputField = (EditText) findViewById(R.id.passInputField);
         dataSendButton = (Button) findViewById(R.id.dataSendButton);
 
-        /*dataSendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData(v);
-            }
-        });*/
     }
 
     public void sendData(View v) {

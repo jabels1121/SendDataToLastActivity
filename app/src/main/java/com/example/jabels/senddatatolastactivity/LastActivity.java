@@ -1,7 +1,9 @@
 package com.example.jabels.senddatatolastactivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -27,12 +29,6 @@ public class LastActivity extends Activity {
         userLogin.setText(getIntent().getStringExtra("login"));
         userPassword.setText(getIntent().getStringExtra("pass"));
 
-        /*backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                backToMainActivity(v);
-            }
-        });*/
     }
 
 
@@ -45,5 +41,17 @@ public class LastActivity extends Activity {
         Toast toast = Toast.makeText(getApplicationContext(), "Hello!", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
+    }
+
+    public void onPosition(View v) {
+        Context context = getApplicationContext();
+        Configuration configuration = getResources().getConfiguration();
+
+        if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast.makeText(context, "Now is Poartrait orientation.", Toast.LENGTH_LONG).show();
+        }
+        if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(context, "Now is LandScape orientation.", Toast.LENGTH_LONG).show();
+        }
     }
 }
